@@ -3,6 +3,7 @@ import Folder from './Folder.jsx';
 import File from './File.jsx';
 import FolderContainer from './FolderContainer.jsx';
 import Input from './Input.jsx';
+import Filter from './Filter.jsx';
 
 
 var data = [
@@ -68,8 +69,9 @@ class App extends Component {
     render() {
         return (
             <div className="widget">
-                <Input />
-                <FolderContainer data={data} />
+                <Input textValue={this.state.value} changeHandler={this.handleChange.bind(this)} />
+           
+                <Filter textValue={this.state.value}  data={data} />
             </div>
         );
     }

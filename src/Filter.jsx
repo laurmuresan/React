@@ -7,11 +7,11 @@ class Filter extends Component{
     {
         let output=[];
 
-
+            
         this.props.data.forEach((item)=>{
             var str='';
             str=item.name;
-            if(str.indexOf(word) > -1) {
+            if(str.indexOf(this.props.textValue) > -1) {
                 if (item.type == 'folder') {
                     output.push(<Folder name={item.name} key={++index}/>);
                 }
@@ -20,7 +20,8 @@ class Filter extends Component{
                 }
             }
             if(item.children){
-                output.push(<Filter data={item.children} key={++index} />);
+                output.push(<Filter textValue={this.props.textValue} data={item.children} key={++index} />);
+
             }
 
         }

@@ -1,26 +1,18 @@
 import React, {Component} from 'react';
 class Input extends Component {
-    constructor() {
-        super();
-        this.state = {value: ""};
-    }
-
-    handleChange(event){
-        this.setState({value: event.target.value});
-    }
 
 
     render()
     {
         return (
             <div className="widget">
-            <input placeholder='filter...' type="text"
-                   value={this.state.value}
-                   onChange={this.handleChange.bind(this)} />
+                <input placeholder='filter...' type="text"
+                      value={this.props.textValue}
+                       onChange={this.props.changeHandler} />
                 <p>
-                    { this.state.value ?  " Searching for : " + this.state.value : null}
+                    { this.props.textValue ?  " Searching for : " + this.props.textValue : null}
                 </p>
-                </div>
+            </div>
         );}
 
 }
