@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Folder from './Folder.jsx';
 import File from './File.jsx';
 import FolderContainer from './FolderContainer.jsx';
+import Input from './Input.jsx';
 
 
 var data = [
@@ -12,10 +13,9 @@ var data = [
         children: [
             {
                 type: "file",
-                name: "cat005.jpg",
-                path: "/animals/cat/images/cat002.jpg"
-            },
-            {
+                name: "cat007.jpg",
+                path: "/animals/cat/images/cat001.jpg"
+            },{
                 type: "folder",
                 name: "cat",
                 path: "/animals/cat",
@@ -31,22 +31,24 @@ var data = [
                                 path: "/animals/cat/images/cat001.jpg"
                             }, {
                                 type: "file",
-                                name: "cat002.jpg",
+                                name: "cat001.jpg",
                                 path: "/animals/cat/images/cat002.jpg"
                             }
                         ]
                     },
                     {
                         type: "file",
-                        name: "cat003.jpg",
+                        name: "cat002.jpg",
                         path: "/animals/cat/images/cat002.jpg"
                     },
                     {
                         type: "file",
-                        name: "cat004.jpg",
+                        name: "cat003.jpg",
                         path: "/animals/cat/images/cat003.jpg"
                     }
                 ]
+
+
             }
         ]
     }
@@ -54,13 +56,23 @@ var data = [
 
 
 class App extends Component {
+    constructor() {
+        super();
+        this.state = {value: ""};
+    }
+
+    handleChange(event){
+        this.setState({value: event.target.value});
+    }
+
     render() {
-      return (
-          <div className='widget'>
-             <FolderContainer data={data} />
-          </div>
-    );
-  }
+        return (
+            <div className="widget">
+                <Input />
+                <FolderContainer data={data} />
+            </div>
+        );
+    }
 }
 export default App;
 

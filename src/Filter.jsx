@@ -1,0 +1,38 @@
+import React, {Component} from 'react';
+import Folder from './Folder.jsx';
+import File from './File.jsx';
+let index=0;
+class Filter extends Component{
+    render()
+    {
+        let output=[];
+
+
+        this.props.data.forEach((item)=>{
+            var str='';
+            str=item.name;
+            if(str.indexOf(word) > -1) {
+                if (item.type == 'folder') {
+                    output.push(<Folder name={item.name} key={++index}/>);
+                }
+                else if (item.type == 'file') {
+                    output.push(<File name={item.name} key={++index}/>);
+                }
+            }
+            if(item.children){
+                output.push(<Filter data={item.children} key={++index} />);
+            }
+
+        }
+        );
+        return (
+            <ul>
+                {output}
+            </ul>
+        )
+        
+    }
+
+
+}
+export default Filter;

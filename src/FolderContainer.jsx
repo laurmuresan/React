@@ -8,22 +8,21 @@ class FolderContainer extends  Component{
         let output=[];
 
         this.props.data.forEach((item)=> {
-            console.log(item.type);
             if(item.type ==='folder'){
                 output.push(<Folder name={item.name} key={++index} />); }
             else if (item.type ==='file'){
                 output.push(<File name={item.name} key={++index} />);}
 
-           if(item.children){
-               output.push(<FolderContainer data={item.children} key={++index} />);
-          }
+            if(item.children){
+                output.push(<FolderContainer data={item.children} key={++index} />);
+            }
 
-    });
+        });
         return (
             <ul>
                 {output}
             </ul>
         )
-}
+    }
 }
 export default FolderContainer;
