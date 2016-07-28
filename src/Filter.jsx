@@ -7,31 +7,31 @@ class Filter extends Component{
     {
         let output=[];
 
-            
+
         this.props.data.forEach((item)=>{
-            var str='';
-            str=item.name;
-            if(str.indexOf(this.props.textValue) > -1) {
-                if (item.type == 'folder') {
-                    output.push(<Folder name={item.name} key={++index}/>);
+                var str='';
+                str=item.name;
+                if(str.indexOf(this.props.textValue) > -1) {
+                    if (item.type == 'folder') {
+                        output.push(<Folder name={item.name} key={++index}/>);
+                    }
+                    else if (item.type == 'file') {
+                        output.push(<File name={item.name} key={++index}/>);
+                    }
                 }
-                else if (item.type == 'file') {
-                    output.push(<File name={item.name} key={++index}/>);
+                if(item.children){
+                    output.push(<Filter textValue={this.props.textValue} data={item.children} key={++index} />);
+
                 }
-            }
-            if(item.children){
-                output.push(<Filter textValue={this.props.textValue} data={item.children} key={++index} />);
 
             }
-
-        }
         );
         return (
             <ul>
                 {output}
             </ul>
         )
-        
+
     }
 
 
