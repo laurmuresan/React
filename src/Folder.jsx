@@ -8,13 +8,22 @@ class Folder extends Component {
     }
     
     render() {
-        
+       if (this.props.name.isCollapsed)
+       {
         return (
   
             <li className="folder-item true " onClick={this.handle.bind(this,this.props.name)}>  {this.props.name.name}</li>
 
+        );}
+        if ( !this.props.name.isCollapsed)
+       {
+           return (
 
-        );
+               <li className="folder-item false " onClick={this.handle.bind(this,this.props.name)}>  {this.props.name.name}</li>
+
+           );
+
+       }
     }
 }
 export default Folder;
