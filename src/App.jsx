@@ -35,19 +35,10 @@ class App extends Component {
         this.setState({value: event.target.value});
     }
 
+        
     render() {
 
-        if (this.state.value.length <1)
-        {
 
-            return (
-                    <div className="widget">
-                    <Input textValue={this.state.value} changeHandler={this.handleChange.bind(this)}/>
-                    <FolderContainer data={this.state.data}/>
-                    </div>
-            );
-        }
-        else {
             return (
                 <div className="widget">
                     <Input textValue={this.state.value} changeHandler={this.handleChange.bind(this)}/>
@@ -57,6 +48,5 @@ class App extends Component {
             );
         }
     }
-}
 export default App;
 

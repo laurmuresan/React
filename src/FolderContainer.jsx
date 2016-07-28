@@ -9,12 +9,14 @@ class FolderContainer extends  Component{
 
         this.props.data.forEach((item)=> {
             if(item.type ==='folder'){
-                output.push(<Folder name={item.name} key={++index} />); }
+                output.push(<Folder name={item} key={++index}  handle={this.props.handle}/>);
+                console.log(this.props.handle);}
+
             else if (item.type ==='file'){
                 output.push(<File name={item.name} key={++index} />);}
 
-            if(item.children){
-                output.push(<FolderContainer data={item.children} key={++index} />);
+            if(item.children && !item.isCollapsed ){
+                output.push(<FolderContainer data={item.children} handle={this.props.handle} key={++index} />);
             }
 
         });

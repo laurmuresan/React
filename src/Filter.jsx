@@ -1,35 +1,48 @@
 import React, {Component} from 'react';
 import Folder from './Folder.jsx';
 import File from './File.jsx';
+import FolderContainer from './FolderContainer.jsx';
 let index=0;
+let output=[];
 class Filter extends Component{
-    render()
-    {
-        let output=[];
 
+    constructor(){
+        super();
+        this.state={forcedrerender:false};
+    }
+    
+    handle(){
+        this.setState({forcedrerender: !this.state.forcedrerender});
+    }
+    
 
-        this.props.data.forEach((item)=>{
+    findmatches(data){
+        
+        data.forEach((item)=>{
                 var str='';
                 str=item.name;
                 if(str.indexOf(this.props.textValue) > -1) {
-                    if (item.type == 'folder') {
-                        output.push(<Folder name={item.name} key={++index}/>);
-                    }
-                    else if (item.type == 'file') {
-                        output.push(<File name={item.name} key={++index}/>);
-                    }
+
+                    output.push(item);
                 }
-                if(item.children){
-                    output.push(<Filter textValue={this.props.textValue} data={item.children} key={++index} />);
+                else if(item.children){
+                    this.findmatches (item.children);
 
                 }
 
             }
         );
+
+    }
+    render()
+    {
+            output=[];
+        console.log(this.handle);
+        this.findmatches(this.props.data);
         return (
-            <ul>
-                {output}
-            </ul>
+
+                <FolderContainer data={output} handle={this.handle.bind(this)} />
+
         )
 
     }
