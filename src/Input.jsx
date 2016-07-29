@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-class Input extends Component {
+export default class Input extends Component {
 
 
     render()
@@ -16,4 +16,4 @@ class Input extends Component {
         );}
 
 }
-export default Input;
+//export default Input;

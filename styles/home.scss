@@ -41,14 +41,25 @@ body {
 }
 
 .file-item {
-  background: transparent  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsUlEQVQ4T2NkgIKE2q4DMDZW+j+jAgPj//0LmssSkeUZEQZ0/1/QXArnoxuSUNPdwMDIEMDwn2HDgpbSBpg8aQYw/H/PwMCQwMDIMHFBc9kCkCGkGODAwMAAwiBd9TDXYhiQUNtdwPCfgR97ePy7uKClfENCLcK7RLsA2UC8BoADi4HhP44YObigpfTAsHfBgMcC3vwAzze0TAcUuKDrAMN/RlwJCNVcRoaPC5pLA0CCALOMnRHTr6OKAAAAAElFTkSuQmCC') no-repeat left center;
+  background: transparent  url("http://icons.iconarchive.com/icons/gakuseisean/radium/16/png-file-icon.png") no-repeat left center;
+}
+.imagetxt {
+  background: transparent  url("http://www.cdc.gov/other/images/icon_word.gif") no-repeat left center;
 }
 
-.folder-item {
+.ttrue {
   position: relative;
   font-weight: bold;
-  background: transparent  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6UlEQVQ4T62TvQ3CMBCF31OgDxPACGwATAAjeAOgSKpECgoCiRTABmYDNgA2yAawAUpNwiGHH0GBlATcuPH3vbPvTPy4+COPXKCCpY30sgORPIU6dLtF5FTeYgWgA2KtQ1fnQj8amQ2C81fJVcZ65sZUfhTr0GmrYN5iZjWLpIqwC0oLVjah8hd7WPUBsvQIwC4ieD9zFwgDELuyMCCHuwDcAliWFgg2jwoQgxxWEDzeICfZqSDoPa9QHjZpVq1B5UUnEIXa91GhSKKnrm3mQEqXngNyMNNqBKYD/QqSsQ6d1X8+U4X0F3IDjRRPOikDqHUAAAAASUVORK5CYII=') no-repeat left center;
+  background: transparent  url("http://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/16/Folder-icon.png") no-repeat left center;
 }
+.ffalse {
+  position: relative;
+  font-weight: bold;
+  background: transparent  url("http://www.ibm.com/support/knowledgecenter/SSTFXA_6.2.0.1/com.ibm.itm.doc_6.2.fp1/images/folderopen_16x16.gif") no-repeat left center;
+}
+
+
+
 .true:before{
   content: url("http://icons.iconarchive.com/icons/yusuke-kamiyamane/fugue/16/toggle-expand-icon.png");
 

@@ -6,7 +6,7 @@ import Input from './Input.jsx';
 import Filter from './Filter.jsx';
 import $ from 'jquery';
 
-class App extends Component {
+export default class App extends Component {
 
     componentDidMount(){
         $.ajax({
@@ -48,5 +48,5 @@ class App extends Component {
             );
         }
     }
-export default App;
+//export default App;
 

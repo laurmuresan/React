@@ -4,7 +4,7 @@ import File from './File.jsx';
 import FolderContainer from './FolderContainer.jsx';
 let index=0;
 let output=[];
-class Filter extends Component{
+export default class Filter extends Component{
 
     constructor(){
         super();
@@ -37,7 +37,7 @@ class Filter extends Component{
     render()
     {
             output=[];
-        console.log(this.handle);
+       
         this.findmatches(this.props.data);
         return (
 
@@ -49,4 +49,4 @@ class Filter extends Component{
 
 
 }
-export default Filter;
+//export default Filter;
